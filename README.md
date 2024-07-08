@@ -4,13 +4,13 @@
 
 # Informasi Library
 *Author :* [**Rahmat adha**](https://facebook.com/Anjay.pro098)\
-*Library :* [**FbRuby**](https://github.com/MR-X-Junior/fbruby)\
+*Library :* [**FbRuby**](https://github.com/MR-X-Junior/FbRuby)\
 *License:* [**MIT License**](https://github.com/MR-X-junior/fbruby/blob/main/LICENSE)\
 *Release:* 08/07/2024\
-*Version :* **0.0.1**
+*Version :* **0.0.2**
 
 Library ini merupakan remake dari library [fbthon](https://github.com/MR-X-Junior/fbthon)\
-Di karenakan library ini masih versi pertama, pasti bakal banyak error/bug nya, jika menemukan error/bug pada library ini bisa langsung posting di [Issues](https://github.com/MR-X-junior/fbruby/issues) akun github saya :)
+Di karenakan library ini masih versi awal, pasti bakal banyak error/bug nya, jika menemukan error/bug pada library ini bisa langsung posting di [Issues](https://github.com/MR-X-junior/FbRuby/issues) akun github saya :)
 
 **Ini bukan dokumentasi full dari library FbRuby, masih banyal hal yang bisa di lakukan menggunakan library ini.**
 **Dokumentasi ini hanya memuat fitur umum yang di gunakan untuk scraping web facebook**
@@ -20,14 +20,14 @@ Di karenakan library ini masih versi pertama, pasti bakal banyak error/bug nya, 
 ### Pertama-tama buat dulu object `Facebook` menggunakan cookie
 
 ```ruby
-irb(main):001:0> require 'fbruby'
+irb(main):001:0> require 'FbRuby'
 irb(main):002:0> fb = FbRuby::Facebook.new("datr=xxxx")
 ```
 
 ### Jika tidak tidak mempunyai Cookie akun facebook, kamu bisa coba cara di bawah ini
 
 ```ruby
-irb(main):001:0> require 'fbruby'
+irb(main):001:0> require 'FbRuby'
 irb(main):002:0> email = "example@gmail.com"
 irb(main):003:0> password = "admin123#"
 irb(main):004:0> login = FbRuby::Login::Web_Login.new(email,password)
@@ -40,7 +40,7 @@ Cara di [atas](#Jika-tidak-tidak-mempunyai-Cookie-akun-facebook-kamu-bisa-coba-c
 Untuk mengurangi risiko akun terkena checkpoint, kamu hanya perlu mengganti user-agent yang sama dengan perangkat yang terakhir kali di gunakan untuk login akun facebook.
 
 ```ruby
-irb(main):001:0> require 'fbruby'
+irb(main):001:0> require 'FbRuby'
 irb(main):002:0> user_agent = {'User-Agent'=>'Mozilla/5.0 (Linux; Android 6.0.1; SM-J510GN Build/MMB29M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36'}
 irb(main):003:0> email = "example@gmail.com"
 irb(main):004:0> password = "admin123#"
@@ -54,8 +54,8 @@ irb(main):007:0> fb = FbRuby::Facebook.new(cookie)
 
 - **email**: Email akun Facebook, kamu juga bisa menggunakan id atau username sebagai pengganti email
 - **password**: Password akun Facebook
-- **save_login**:  Menyimpan informasi login, default argument ini adalah `True`
-- **free_facebook**: Gunakan `True` jika ingin menggukan web [free.facebook.com](https://free.facebook.com), default argument ini adalah `False`
+- **save_login**:  Menyimpan informasi login, default argument ini adalah `true`
+- **free_facebook**: Gunakan `true` jika ingin menggukan web [free.facebook.com](https://free.facebook.com), default argument ini adalah `False`
 - **headers**: ini  yang akan di gunakan untuk headers `requests`
 
 ### Extract Profile
@@ -380,7 +380,7 @@ irb(main):005:0> post.send_comment("Komentar ini di sertai dengan foto", file = 
 #### Memberikan react pada postingan
 
 Kamu bisa menggunakan method `send_react` untuk memberikan react pada postingan.
-Method ini akan mengembalikan `True` jika berhasil memberikan react pada postingan.
+Method ini akan mengembalikan `true` jika berhasil memberikan react pada postingan.
 
 ```ruby
 irb(main):006:1* post.send_react(react_type)
@@ -795,7 +795,7 @@ Kamu bisa menggunakan class `CreateAccount` untuk membuat akun Facebook.
 Di bawah ini adalah program sederhana untuk membuat akun Facebook.
 
 ```ruby
-require "fbruby"
+require "FbRuby"
 
 # Nama Depan
 print ("[?] Nama Depan : ")
@@ -864,7 +864,7 @@ Ini adalah akun yang di buat menggunakan library FbRuby
 
 # Cara Install
 
-**FbRuby** sudah tersedia di [RubyGems](https://rubygems.org/gems/fbruby)
+**FbRuby** sudah tersedia di [RubyGems](https://rubygems.org/gems/FbRuby)
 
 ```console
 $ gem install fbruby
